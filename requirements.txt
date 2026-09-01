@@ -1,0 +1,39 @@
+# DeepVision — Python 3.11
+# ---- Core contract layer (required to import `deepvision`) ----
+pydantic>=2.6,<3
+pydantic-settings>=2.2,<3
+sqlmodel>=0.0.16
+SQLAlchemy>=2.0,<3
+
+# ---- API ----
+fastapi>=0.110,<1
+uvicorn[standard]>=0.29
+python-multipart>=0.0.9
+
+# ---- Vectors ----
+chromadb>=0.5
+
+# ---- Ingestion (referenced by interfaces; used by builders) ----
+arxiv>=2.1
+PyMuPDF>=1.24            # fitz: text + image + page render
+pytesseract>=0.3.10      # OCR (requires system `tesseract`)
+Pillow>=10.2
+
+# ---- Local models ----
+sentence-transformers>=2.7   # local embeddings (bge-large default)
+transformers>=4.40           # Qwen2-VL / Florence-2 vision
+# torch is required by transformers/sentence-transformers; install the build
+# matching your platform (CPU/CUDA/MPS) from https://pytorch.org
+# torch>=2.2
+
+# ---- API providers (optional, only when a stage is set to `api`) ----
+httpx>=0.27
+openai>=1.30
+anthropic>=0.25
+
+# ---- Export ----
+weasyprint>=61
+markdown-it-py>=3
+
+# ---- Dev / test ----
+pytest>=8.1

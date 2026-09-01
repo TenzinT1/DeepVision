@@ -1,0 +1,66 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+.python-version
+
+# ---- Env / secrets (NEVER commit these) ----
+.env
+.env.*
+!.env.example
+*.local
+*.key
+*.pem
+secrets.*
+
+# ---- DeepVision local data (PDFs, crops, page images, SQLite DB w/ any API
+#      keys, Chroma vectors) — MUST stay out of the repo ----
+deepvision/data/*
+!deepvision/data/.gitkeep
+scripts/last_real_report.json
+
+# ---- Node / frontend ----
+node_modules/
+frontend/node_modules/
+frontend/dist/
+npm-debug.log*
+yarn-error.log*
+.vite/
+
+# ---- Logs / runtime ----
+*.log
+*.pid
+
+# ---- Tooling ----
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ---- Editors / OS ----
+.idea/
+.vscode/*
+.DS_Store
+
+# Per-machine editor and tooling settings
+.claude/
+.vscode/
+
+# ---- Design source (large input artifacts, kept out of the build) ----
+.design_extracted/
+*.zip
+
+# TypeScript incremental build cache (build artifact)
+*.tsbuildinfo
+frontend/tsconfig.tsbuildinfo
+
+# tsc byproducts of vite.config.ts
+frontend/vite.config.js
+frontend/vite.config.d.ts
